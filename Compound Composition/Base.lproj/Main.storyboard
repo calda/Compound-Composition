@@ -35,6 +35,158 @@
                                     <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jWY-HH-qqf"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swm-bn-b1X">
+                                <rect key="frame" x="0.0" y="547" width="375" height="56"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqZ-si-iqA">
+                                        <rect key="frame" x="5" y="7" width="365" height="42"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Oz-6E-H5q" userLabel="1" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="31" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="displayNumber">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A00-V0-rTF" userLabel="2" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
+                                                <rect key="frame" x="37" y="0.0" width="31" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="displayNumber">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IpK-nM-M06" userLabel="3" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
+                                                <rect key="frame" x="74" y="0.0" width="31.5" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="displayNumber">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCN-qw-uPZ" userLabel="4" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
+                                                <rect key="frame" x="111.5" y="0.0" width="31" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="displayNumber">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crl-aE-0uJ" userLabel="5" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
+                                                <rect key="frame" x="148.5" y="0.0" width="31" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="displayNumber">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ytd-1x-jjO" userLabel="6" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
+                                                <rect key="frame" x="185.5" y="0.0" width="31" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="displayNumber">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFd-pW-b2s" userLabel="7" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
+                                                <rect key="frame" x="222.5" y="0.0" width="31" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="displayNumber">
+                                                        <integer key="value" value="7"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9D-7W-pGU" userLabel="8" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
+                                                <rect key="frame" x="259.5" y="0.0" width="31.5" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="displayNumber">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzG-cL-aWv" userLabel="0" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
+                                                <rect key="frame" x="334" y="0.0" width="31" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="displayNumber">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DoD-l7-XdJ" userLabel="9" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
+                                                <rect key="frame" x="297" y="0.0" width="31" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="displayNumber">
+                                                        <integer key="value" value="9"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Ytd-1x-jjO" secondAttribute="bottom" id="17V-G9-8yt"/>
+                                            <constraint firstItem="6Oz-6E-H5q" firstAttribute="width" secondItem="TzG-cL-aWv" secondAttribute="width" id="1RR-3t-cfu"/>
+                                            <constraint firstItem="gCN-qw-uPZ" firstAttribute="leading" secondItem="IpK-nM-M06" secondAttribute="trailing" constant="6" id="4Sj-37-UVc"/>
+                                            <constraint firstItem="6Oz-6E-H5q" firstAttribute="width" secondItem="gCN-qw-uPZ" secondAttribute="width" id="6r0-kA-rUy"/>
+                                            <constraint firstItem="6Oz-6E-H5q" firstAttribute="width" secondItem="DoD-l7-XdJ" secondAttribute="width" id="7LC-6D-qZF"/>
+                                            <constraint firstItem="A00-V0-rTF" firstAttribute="leading" secondItem="6Oz-6E-H5q" secondAttribute="trailing" constant="6" id="7dM-VX-JcI"/>
+                                            <constraint firstItem="Ytd-1x-jjO" firstAttribute="leading" secondItem="crl-aE-0uJ" secondAttribute="trailing" constant="6" id="7dq-oP-FLG"/>
+                                            <constraint firstItem="IpK-nM-M06" firstAttribute="leading" secondItem="A00-V0-rTF" secondAttribute="trailing" constant="6" id="8gn-i4-bbI"/>
+                                            <constraint firstItem="6Oz-6E-H5q" firstAttribute="top" secondItem="aqZ-si-iqA" secondAttribute="top" id="9Gc-2D-hcN"/>
+                                            <constraint firstItem="6Oz-6E-H5q" firstAttribute="width" secondItem="A00-V0-rTF" secondAttribute="width" id="Bhj-QD-4dM"/>
+                                            <constraint firstItem="TzG-cL-aWv" firstAttribute="leading" secondItem="DoD-l7-XdJ" secondAttribute="trailing" constant="6" id="DqF-Cf-LkV"/>
+                                            <constraint firstItem="6Oz-6E-H5q" firstAttribute="width" secondItem="e9D-7W-pGU" secondAttribute="width" id="F9o-9x-CZt"/>
+                                            <constraint firstItem="crl-aE-0uJ" firstAttribute="leading" secondItem="gCN-qw-uPZ" secondAttribute="trailing" constant="6" id="K1R-Bd-wpp"/>
+                                            <constraint firstItem="6Oz-6E-H5q" firstAttribute="width" secondItem="crl-aE-0uJ" secondAttribute="width" id="LTN-Oz-jXg"/>
+                                            <constraint firstItem="TzG-cL-aWv" firstAttribute="top" secondItem="aqZ-si-iqA" secondAttribute="top" id="N9h-Vu-CLx"/>
+                                            <constraint firstAttribute="trailing" secondItem="TzG-cL-aWv" secondAttribute="trailing" id="NgR-St-huY"/>
+                                            <constraint firstItem="DoD-l7-XdJ" firstAttribute="top" secondItem="aqZ-si-iqA" secondAttribute="top" id="OcF-3j-EnA"/>
+                                            <constraint firstItem="6Oz-6E-H5q" firstAttribute="width" secondItem="oFd-pW-b2s" secondAttribute="width" id="PPC-NF-eCK"/>
+                                            <constraint firstItem="e9D-7W-pGU" firstAttribute="leading" secondItem="oFd-pW-b2s" secondAttribute="trailing" constant="6" id="R4f-wg-ImP"/>
+                                            <constraint firstAttribute="bottom" secondItem="crl-aE-0uJ" secondAttribute="bottom" id="Tf3-d3-1Zw"/>
+                                            <constraint firstItem="oFd-pW-b2s" firstAttribute="top" secondItem="aqZ-si-iqA" secondAttribute="top" id="UQ1-gq-Yqv"/>
+                                            <constraint firstItem="6Oz-6E-H5q" firstAttribute="width" secondItem="IpK-nM-M06" secondAttribute="width" id="Wo5-0U-yIZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="IpK-nM-M06" secondAttribute="bottom" id="Wvl-dQ-qzB"/>
+                                            <constraint firstItem="IpK-nM-M06" firstAttribute="top" secondItem="aqZ-si-iqA" secondAttribute="top" id="Zii-Ve-u3B"/>
+                                            <constraint firstItem="A00-V0-rTF" firstAttribute="top" secondItem="aqZ-si-iqA" secondAttribute="top" id="aef-lX-LIl"/>
+                                            <constraint firstItem="6Oz-6E-H5q" firstAttribute="leading" secondItem="aqZ-si-iqA" secondAttribute="leading" id="at6-7b-t3y"/>
+                                            <constraint firstItem="crl-aE-0uJ" firstAttribute="top" secondItem="aqZ-si-iqA" secondAttribute="top" id="bSp-ag-5ja"/>
+                                            <constraint firstItem="oFd-pW-b2s" firstAttribute="leading" secondItem="Ytd-1x-jjO" secondAttribute="trailing" constant="6" id="eEb-Dd-KRO"/>
+                                            <constraint firstItem="Ytd-1x-jjO" firstAttribute="top" secondItem="aqZ-si-iqA" secondAttribute="top" id="hRa-6K-FR8"/>
+                                            <constraint firstAttribute="bottom" secondItem="6Oz-6E-H5q" secondAttribute="bottom" id="hfk-eb-W7k"/>
+                                            <constraint firstAttribute="bottom" secondItem="oFd-pW-b2s" secondAttribute="bottom" id="k12-r5-zAs"/>
+                                            <constraint firstAttribute="bottom" secondItem="DoD-l7-XdJ" secondAttribute="bottom" id="r2z-jG-wS3"/>
+                                            <constraint firstItem="gCN-qw-uPZ" firstAttribute="top" secondItem="aqZ-si-iqA" secondAttribute="top" id="r8P-gj-SY0"/>
+                                            <constraint firstItem="6Oz-6E-H5q" firstAttribute="width" secondItem="Ytd-1x-jjO" secondAttribute="width" id="sf2-ZL-f7c"/>
+                                            <constraint firstItem="e9D-7W-pGU" firstAttribute="top" secondItem="aqZ-si-iqA" secondAttribute="top" id="tkG-pY-TZv"/>
+                                            <constraint firstAttribute="bottom" secondItem="A00-V0-rTF" secondAttribute="bottom" id="uVD-os-2Pa"/>
+                                            <constraint firstItem="DoD-l7-XdJ" firstAttribute="leading" secondItem="e9D-7W-pGU" secondAttribute="trailing" constant="6" id="vfJ-hg-5FR"/>
+                                            <constraint firstAttribute="bottom" secondItem="6Oz-6E-H5q" secondAttribute="bottom" id="xC4-Dy-jQM"/>
+                                            <constraint firstAttribute="bottom" secondItem="TzG-cL-aWv" secondAttribute="bottom" id="xWm-1M-cL0"/>
+                                            <constraint firstAttribute="bottom" secondItem="gCN-qw-uPZ" secondAttribute="bottom" id="yEn-75-9Eg"/>
+                                            <constraint firstAttribute="bottom" secondItem="e9D-7W-pGU" secondAttribute="bottom" id="yPO-lD-rJW"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.85378370686666671" green="0.85378370686666671" blue="0.85378370686666671" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aqZ-si-iqA" secondAttribute="trailing" constant="5" id="5uo-6k-6sk"/>
+                                    <constraint firstItem="aqZ-si-iqA" firstAttribute="top" secondItem="swm-bn-b1X" secondAttribute="top" constant="7" id="JVg-tU-WgF"/>
+                                    <constraint firstAttribute="height" constant="56" id="Of2-F5-Czb"/>
+                                    <constraint firstItem="aqZ-si-iqA" firstAttribute="leading" secondItem="swm-bn-b1X" secondAttribute="leading" constant="5" id="igH-7v-A1d"/>
+                                    <constraint firstAttribute="bottom" secondItem="aqZ-si-iqA" secondAttribute="bottom" constant="7" id="nza-dM-P2I"/>
+                                </constraints>
+                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="C5H8Cl2NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TuK-4m-FDb">
                                 <rect key="frame" x="16" y="51" width="343" height="55"/>
                                 <constraints>
@@ -42,23 +194,27 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tzH-aw-gfB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1B4-tY-ZHN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="swm-bn-b1X" secondAttribute="bottom" id="5Mn-fL-5TA"/>
                             <constraint firstItem="TuK-4m-FDb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6sJ-5b-yvB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TuK-4m-FDb" secondAttribute="trailing" id="AyV-mI-4g5"/>
+                            <constraint firstAttribute="trailing" secondItem="swm-bn-b1X" secondAttribute="trailing" id="Nh2-BY-CyD"/>
                             <constraint firstItem="MXf-8V-FrF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="SBf-tw-FfI"/>
                             <constraint firstItem="MXf-8V-FrF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dF4-VO-AU6"/>
                             <constraint firstItem="tzH-aw-gfB" firstAttribute="top" secondItem="TuK-4m-FDb" secondAttribute="bottom" constant="20" id="p7D-f9-d7j"/>
+                            <constraint firstItem="swm-bn-b1X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xQb-qs-gb8"/>
                             <constraint firstItem="TuK-4m-FDb" firstAttribute="top" secondItem="MXf-8V-FrF" secondAttribute="bottom" constant="10" id="xkH-1t-sih"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chemical Composition" id="ixI-yg-gGR"/>
                     <connections>
                         <outlet property="baseFormulaTextField" destination="TuK-4m-FDb" id="NRH-8G-c6H"/>
+                        <outlet property="numberRow" destination="swm-bn-b1X" id="BKb-Oc-a6p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
