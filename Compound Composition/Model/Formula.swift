@@ -16,7 +16,7 @@ struct Formula {
     public static func from(input: String) -> (formula: Formula?, error: ParsingError) {
         var characters = input.characterArray
         
-        //in-progress elements
+        //in-progress pieces
         var coefficient: Double?
         var elements = [(element: Element, count: Int)]()
         var inProgressElement: Element?
@@ -75,8 +75,7 @@ struct Formula {
                 
             }
             
-            
-            //build existing element
+            //finish build existing element if it exists
             if let element = inProgressElement { //if inProgressElement is not nil
                 
                 let nextStepIsNotInteger = !currentFocus.isInteger || isLastCharacter()
@@ -121,7 +120,7 @@ struct Formula {
                     }
                     
                 } else if currentFocus.isEmpty || (currentFocus.isUppercaseLetter && nextCharacter.isLowercaseLetter) {
-                    //wait for two-character element before throwing an error
+                    //wait for two-character element before doing anything
                 } else {
                     return (nil, error: .invalidElement(currentFocus, focusRange()))
                 }
@@ -139,10 +138,6 @@ struct Formula {
         
         let formula = Formula(originalString: input, coefficient: coefficient ?? 1, elements: elements)
         return (formula, error: .none)
-        
-        
-        
-        //return (nil, .unknown)
     }
     
     public enum ParsingError {

@@ -15,7 +15,14 @@ class InputViewController: UIViewController {
     @IBAction func calculatePressed(_ sender: Any) {
         let text = baseFormulaTextField.text ?? ""
         
-        print(Formula.from(input: text))
+        if let formula = Formula.from(input: text).formula {
+            let calculation = Calculation(components: [formula])
+            
+            print(formula)
+            print(calculation.percentComposition)
+        }
+        
+        
     }
     
     

@@ -29,18 +29,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzH-aw-gfB">
-                                <rect key="frame" x="295" y="106" width="64" height="30"/>
+                                <rect key="frame" x="295" y="126" width="64" height="30"/>
                                 <state key="normal" title="Calculate"/>
                                 <connections>
                                     <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jWY-HH-qqf"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="C5H8Cl2NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TuK-4m-FDb">
-                                <rect key="frame" x="16" y="51" width="343" height="35"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="C5H8Cl2NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TuK-4m-FDb">
+                                <rect key="frame" x="16" y="51" width="343" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="PKt-cN-W08"/>
+                                    <constraint firstAttribute="height" constant="55" id="PKt-cN-W08"/>
                                 </constraints>
-                                <attributedString key="attributedText"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet"/>
                             </textField>
                         </subviews>
