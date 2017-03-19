@@ -8,26 +8,55 @@
 
 /* Begin PBXBuildFile section */
 		2EEF7BF31E7E1DCA008CEF11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7BF21E7E1DCA008CEF11 /* AppDelegate.swift */; };
-		2EEF7BF51E7E1DCA008CEF11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7BF41E7E1DCA008CEF11 /* ViewController.swift */; };
 		2EEF7BF81E7E1DCA008CEF11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EEF7BF61E7E1DCA008CEF11 /* Main.storyboard */; };
-		2EEF7BFB1E7E1DCA008CEF11 /* Compound_Composition.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7BF91E7E1DCA008CEF11 /* Compound_Composition.xcdatamodeld */; };
 		2EEF7BFD1E7E1DCA008CEF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EEF7BFC1E7E1DCA008CEF11 /* Assets.xcassets */; };
 		2EEF7C001E7E1DCA008CEF11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EEF7BFE1E7E1DCA008CEF11 /* LaunchScreen.storyboard */; };
+		2EEF7C091E7E1FDC008CEF11 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7C081E7E1FDC008CEF11 /* InputViewController.swift */; };
+		2EEF7C0D1E7E1FE5008CEF11 /* Compound_Composition.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7C0B1E7E1FE5008CEF11 /* Compound_Composition.xcdatamodeld */; };
+		2EEF7C0F1E7E2002008CEF11 /* NavigationController+LightStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7C0E1E7E2002008CEF11 /* NavigationController+LightStatusBar.swift */; };
+		2EEF7C111E7E240C008CEF11 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7C101E7E240C008CEF11 /* Element.swift */; };
+		2EEF7C131E7E2655008CEF11 /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7C121E7E2655008CEF11 /* Formula.swift */; };
+		2EEF7C1B1E7E42C2008CEF11 /* Parsing_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7C1A1E7E42C2008CEF11 /* Parsing_Tests.swift */; };
+		2EEF7C221E7E4367008CEF11 /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7C121E7E2655008CEF11 /* Formula.swift */; };
+		2EEF7C231E7E4444008CEF11 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7C101E7E240C008CEF11 /* Element.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2EEF7C1D1E7E42C2008CEF11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EEF7BE71E7E1DCA008CEF11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EEF7BEE1E7E1DCA008CEF11;
+			remoteInfo = "Compound Composition";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2EEF7BEF1E7E1DCA008CEF11 /* Compound Composition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Compound Composition.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EEF7BF21E7E1DCA008CEF11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2EEF7BF41E7E1DCA008CEF11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2EEF7BF71E7E1DCA008CEF11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2EEF7BFA1E7E1DCA008CEF11 /* Compound_Composition.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Compound_Composition.xcdatamodel; sourceTree = "<group>"; };
 		2EEF7BFC1E7E1DCA008CEF11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EEF7BFF1E7E1DCA008CEF11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EEF7C011E7E1DCA008CEF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EEF7C081E7E1FDC008CEF11 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		2EEF7C0C1E7E1FE5008CEF11 /* Compound_Composition.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Compound_Composition.xcdatamodel; sourceTree = "<group>"; };
+		2EEF7C0E1E7E2002008CEF11 /* NavigationController+LightStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationController+LightStatusBar.swift"; sourceTree = "<group>"; };
+		2EEF7C101E7E240C008CEF11 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		2EEF7C121E7E2655008CEF11 /* Formula.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
+		2EEF7C181E7E42C2008CEF11 /* Parsing-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Parsing-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EEF7C1A1E7E42C2008CEF11 /* Parsing_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing_Tests.swift; sourceTree = "<group>"; };
+		2EEF7C1C1E7E42C2008CEF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2EEF7BEC1E7E1DCA008CEF11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EEF7C151E7E42C2008CEF11 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				2EEF7BF11E7E1DCA008CEF11 /* Compound Composition */,
+				2EEF7C191E7E42C2008CEF11 /* Parsing-Tests */,
 				2EEF7BF01E7E1DCA008CEF11 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				2EEF7BEF1E7E1DCA008CEF11 /* Compound Composition.app */,
+				2EEF7C181E7E42C2008CEF11 /* Parsing-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,14 +88,42 @@
 			isa = PBXGroup;
 			children = (
 				2EEF7BF21E7E1DCA008CEF11 /* AppDelegate.swift */,
-				2EEF7BF41E7E1DCA008CEF11 /* ViewController.swift */,
 				2EEF7BF61E7E1DCA008CEF11 /* Main.storyboard */,
 				2EEF7BFC1E7E1DCA008CEF11 /* Assets.xcassets */,
 				2EEF7BFE1E7E1DCA008CEF11 /* LaunchScreen.storyboard */,
 				2EEF7C011E7E1DCA008CEF11 /* Info.plist */,
-				2EEF7BF91E7E1DCA008CEF11 /* Compound_Composition.xcdatamodeld */,
+				2EEF7C071E7E1FDC008CEF11 /* Views */,
+				2EEF7C0A1E7E1FE5008CEF11 /* Model */,
 			);
 			path = "Compound Composition";
+			sourceTree = "<group>";
+		};
+		2EEF7C071E7E1FDC008CEF11 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2EEF7C081E7E1FDC008CEF11 /* InputViewController.swift */,
+				2EEF7C0E1E7E2002008CEF11 /* NavigationController+LightStatusBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2EEF7C0A1E7E1FE5008CEF11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EEF7C0B1E7E1FE5008CEF11 /* Compound_Composition.xcdatamodeld */,
+				2EEF7C101E7E240C008CEF11 /* Element.swift */,
+				2EEF7C121E7E2655008CEF11 /* Formula.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2EEF7C191E7E42C2008CEF11 /* Parsing-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2EEF7C1A1E7E42C2008CEF11 /* Parsing_Tests.swift */,
+				2EEF7C1C1E7E42C2008CEF11 /* Info.plist */,
+			);
+			path = "Parsing-Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +146,24 @@
 			productReference = 2EEF7BEF1E7E1DCA008CEF11 /* Compound Composition.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2EEF7C171E7E42C2008CEF11 /* Parsing-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EEF7C1F1E7E42C2008CEF11 /* Build configuration list for PBXNativeTarget "Parsing-Tests" */;
+			buildPhases = (
+				2EEF7C141E7E42C2008CEF11 /* Sources */,
+				2EEF7C151E7E42C2008CEF11 /* Frameworks */,
+				2EEF7C161E7E42C2008CEF11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EEF7C1E1E7E42C2008CEF11 /* PBXTargetDependency */,
+			);
+			name = "Parsing-Tests";
+			productName = "Parsing-Tests";
+			productReference = 2EEF7C181E7E42C2008CEF11 /* Parsing-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -101,6 +178,12 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = FZ89A5SZ7C;
 						ProvisioningStyle = Automatic;
+					};
+					2EEF7C171E7E42C2008CEF11 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = FZ89A5SZ7C;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2EEF7BEE1E7E1DCA008CEF11;
 					};
 				};
 			};
@@ -118,6 +201,7 @@
 			projectRoot = "";
 			targets = (
 				2EEF7BEE1E7E1DCA008CEF11 /* Compound Composition */,
+				2EEF7C171E7E42C2008CEF11 /* Parsing-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +217,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2EEF7C161E7E42C2008CEF11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,13 +231,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EEF7BFB1E7E1DCA008CEF11 /* Compound_Composition.xcdatamodeld in Sources */,
-				2EEF7BF51E7E1DCA008CEF11 /* ViewController.swift in Sources */,
+				2EEF7C111E7E240C008CEF11 /* Element.swift in Sources */,
+				2EEF7C0F1E7E2002008CEF11 /* NavigationController+LightStatusBar.swift in Sources */,
+				2EEF7C131E7E2655008CEF11 /* Formula.swift in Sources */,
+				2EEF7C0D1E7E1FE5008CEF11 /* Compound_Composition.xcdatamodeld in Sources */,
+				2EEF7C091E7E1FDC008CEF11 /* InputViewController.swift in Sources */,
 				2EEF7BF31E7E1DCA008CEF11 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2EEF7C141E7E42C2008CEF11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EEF7C221E7E4367008CEF11 /* Formula.swift in Sources */,
+				2EEF7C1B1E7E42C2008CEF11 /* Parsing_Tests.swift in Sources */,
+				2EEF7C231E7E4444008CEF11 /* Element.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2EEF7C1E1E7E42C2008CEF11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EEF7BEE1E7E1DCA008CEF11 /* Compound Composition */;
+			targetProxy = 2EEF7C1D1E7E42C2008CEF11 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2EEF7BF61E7E1DCA008CEF11 /* Main.storyboard */ = {
@@ -267,6 +379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FZ89A5SZ7C;
 				INFOPLIST_FILE = "Compound Composition/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.calstephens.Compound-Composition";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -280,10 +393,39 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FZ89A5SZ7C;
 				INFOPLIST_FILE = "Compound Composition/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.calstephens.Compound-Composition";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		2EEF7C201E7E42C2008CEF11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FZ89A5SZ7C;
+				INFOPLIST_FILE = "Parsing-Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.calstephens.Parsing-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Compound Composition.app/Compound Composition";
+			};
+			name = Debug;
+		};
+		2EEF7C211E7E42C2008CEF11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FZ89A5SZ7C;
+				INFOPLIST_FILE = "Parsing-Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.calstephens.Parsing-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Compound Composition.app/Compound Composition";
 			};
 			name = Release;
 		};
@@ -307,15 +449,23 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
+		2EEF7C1F1E7E42C2008CEF11 /* Build configuration list for PBXNativeTarget "Parsing-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EEF7C201E7E42C2008CEF11 /* Debug */,
+				2EEF7C211E7E42C2008CEF11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2EEF7BF91E7E1DCA008CEF11 /* Compound_Composition.xcdatamodeld */ = {
+		2EEF7C0B1E7E1FE5008CEF11 /* Compound_Composition.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2EEF7BFA1E7E1DCA008CEF11 /* Compound_Composition.xcdatamodel */,
+				2EEF7C0C1E7E1FE5008CEF11 /* Compound_Composition.xcdatamodel */,
 			);
-			currentVersion = 2EEF7BFA1E7E1DCA008CEF11 /* Compound_Composition.xcdatamodel */;
+			currentVersion = 2EEF7C0C1E7E1FE5008CEF11 /* Compound_Composition.xcdatamodel */;
 			path = Compound_Composition.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
