@@ -37,8 +37,32 @@ class FormulaTextField : UITextField {
         self.spellCheckingType = .no
     }
     
-    func attributedText(for formulaString: String) -> NSAttributedString {
-        return formulaString.asChemicalFormula(ofSize: self.font?.pointSize ?? 23)
+    func attributedText(for formulaString: String, showingErrors: Bool = false) -> NSAttributedString {
+        let attributedWithSubscripts = formulaString.asChemicalFormula(ofSize: self.font?.pointSize ?? 23)
+        let displayString = attributedWithSubscripts.mutableCopy() as! NSMutableAttributedString
+        
+        let (_, error) = Formula.from(input: displayString.string)
+        
+        //show any errors as red text
+        let errorRangeAttributes: [String : Any] = [
+            NSForegroundColorAttributeName : UIColor.red
+        ]
+        
+        func handleErrorRanges(_ ranges: [NSRange]) {
+            ranges.forEach { range in
+                displayString.addAttributes(errorRangeAttributes, range: range)
+            }
+        }
+        
+        switch(error) {
+            case .invalidInput(let invalidRanges):
+                let ranges = invalidRanges.map{ $0.1 } //map [(String, NSRange)] to [NSRange]
+                handleErrorRanges(ranges)
+            default: break
+        }
+        
+        //return an immutable object
+        return NSAttributedString(attributedString: displayString)
     }
     
     
@@ -100,6 +124,44 @@ class FormulaTextField : UITextField {
         case preserveCursor
     }
     
+}
+
+
+//MARK: - String + AttributedString helper
+
+extension String {
+    
+    func asChemicalFormula(ofSize fontSize: CGFloat) -> NSAttributedString {
+        
+        let normalAttributes: [String : Any] = [
+            NSFontAttributeName : UIFont.systemFont(ofSize: fontSize)
+        ]
+        
+        let subscriptAttributes: [String : Any] = [
+            NSFontAttributeName : UIFont.systemFont(ofSize: fontSize * 0.7),
+            NSBaselineOffsetAttributeName : NSNumber(floatLiteral: -1.5)
+        ]
+        
+        //build the attributed string
+        let attributedString = NSMutableAttributedString()
+        var isPastCoefficient = false //all numbers are in subscript except for the coefficient
+        
+        for character in self.characterArray {
+            let isPartOfNumber = (!isPastCoefficient ? character.isDecimal : false) || character.isInteger
+            
+            if !isPartOfNumber {
+                isPastCoefficient = true //the coefficient ends at the first letter
+            }
+            
+            let attributesForCharacter = (isPastCoefficient && isPartOfNumber) ? subscriptAttributes : normalAttributes
+            
+            let attributedCharacter = NSAttributedString(string: character, attributes: attributesForCharacter)
+            
+            attributedString.append(attributedCharacter)
+        }
+        
+        return NSAttributedString(attributedString: attributedString) //return an immutable copy
+    }
     
     
 }

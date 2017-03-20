@@ -57,27 +57,40 @@ class Parsing_Tests: XCTestCase {
         
     }
     
-    func testInvalidElementNamesYieldCorrectRange() {
+    func testInvalidElementNamesYieldCorrectRanges() {
         
-        let cases: [String : NSRange] = [
-            "Hy" : NSMakeRange(0, 2),
-            "HHy" : NSMakeRange(1, 2),
-            "HeHyHo" : NSMakeRange(2, 2),
-            "HZ" : NSMakeRange(1, 1),
-            "HZH" : NSMakeRange(1, 1),
-            "HZHe" : NSMakeRange(1, 1)
+        let cases: [String : [NSRange]] = [
+            "Hy" : [NSMakeRange(0, 2)],
+            "HHy" : [NSMakeRange(1, 2)],
+            "HeHyHo" : [NSMakeRange(2, 2)],
+            "HeHyHoZZ" : [NSMakeRange(2, 2), NSMakeRange(6, 1), NSMakeRange(7, 1)],
+            "HZ" : [NSMakeRange(1, 1)],
+            "HZH" : [NSMakeRange(1, 1)],
+            "HZHe" : [NSMakeRange(1, 1)],
+            "HyZ" : [NSMakeRange(0, 2), NSMakeRange(2, 1)],
+            "5.0 ZZ" : [NSMakeRange(4, 1), NSMakeRange(5, 1)],
+            "5Hyy" : [NSMakeRange(1, 2), NSMakeRange(3, 1)]
         ]
         
-        for (input, invalidRange) in cases {
+        for (input, expectedRanges) in cases {
             let (formula, error) = Formula.from(input: input)
             
             XCTAssertNil(formula, "Formula \"\(input)\" was supposed to fail, but didn't.")
             
             switch(error) {
-                case .invalidElement(_, let range):
-                    XCTAssert(range == invalidRange, "Formula \"\(input)\" yield the wrong invalid range \(range)")
+                case .invalidInput(let invalidRanges):
+                    
+                    XCTAssert(invalidRanges.count == expectedRanges.count, "Formula \"\(input)\" yielded the incorrect number of invalid ranges (\(invalidRanges.count))")
+                    
+                    var allSame = true
+                    for (index, expectedRange) in expectedRanges.enumerated() {
+                        allSame = allSame && (expectedRange == invalidRanges[index].1)
+                    }
+                
+                    XCTAssertTrue(allSame, "Formula \"\(input)\" yielded incorrect invalid ranges (\(invalidRanges))")
+                
                 default:
-                    XCTAssertTrue(false, "Formula \"\(input)\" didn't yield a .invalidRange error")
+                    XCTAssertTrue(false, "Formula \"\(input)\" didn't yield a .invalidInput error")
             }
             
         }

@@ -19,8 +19,9 @@ struct Formula {
         //in-progress pieces
         var coefficient: Double?
         var elements = [(element: Element, count: Int)]()
-        var inProgressElement: Element?
+        var invalidRanges = [(badCharacters: String, range: NSRange)]()
         
+        var inProgressElement: Element?
         var previousFocus: String = ""
         
         //parse per-character
@@ -122,7 +123,8 @@ struct Formula {
                 } else if currentFocus.isEmpty || (currentFocus.isUppercaseLetter && nextCharacter.isLowercaseLetter) {
                     //wait for two-character element before doing anything
                 } else {
-                    return (nil, error: .invalidElement(currentFocus, focusRange()))
+                    invalidRanges.append((currentFocus, focusRange()))
+                    currentFocus = ""
                 }
                 
             }
@@ -132,6 +134,10 @@ struct Formula {
         
         
         //build the final object
+        if invalidRanges.count > 0 {
+            return (nil, error: .invalidInput(invalidRanges))
+        }
+        
         if elements.count == 0 {
             return (nil, error: .noElements)
         }
@@ -142,7 +148,7 @@ struct Formula {
     
     public enum ParsingError {
         case none
-        case invalidElement(String, NSRange)
+        case invalidInput([(String, NSRange)]) //an array of invalid ranges
         case noElements
         
         var isNone: Bool {
@@ -200,6 +206,10 @@ extension String {
     
     var isDouble: Bool {
         return Double(self) != nil
+    }
+    
+    var isDecimal: Bool {
+        return self == "."
     }
     
 }

@@ -13,6 +13,7 @@ class InputViewController: UIViewController {
     @IBOutlet var formulaTextFields: [FormulaTextField]!
     @IBOutlet weak var baseFormulaTextField: FormulaTextField!
     @IBOutlet weak var numberRow: UIView!
+    @IBOutlet weak var numberRowBottom: NSLayoutConstraint!
 
     
     //MARK: - View Setup
@@ -20,7 +21,8 @@ class InputViewController: UIViewController {
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardChanged(notification:)), name: .UIKeyboardWillChangeFrame, object: nil)
         
-       self.numberRow.transform = CGAffineTransform(translationX: 0, y: self.numberRow.frame.height)
+        self.numberRowBottom.constant = -self.numberRow.frame.height
+        self.view.layoutIfNeeded()
     }
     
     
@@ -34,18 +36,15 @@ class InputViewController: UIViewController {
             let keyboardTop = keyboardSize.origin.y
             let unavailableSpace = UIScreen.main.bounds.height - keyboardTop
             
-            var transform = -unavailableSpace
-            
-            if transform == 0 {
+            var translation = unavailableSpace
+            if translation == 0 {
                 //put the row below the screen instead of right at the bottom
-                transform = self.numberRow.frame.height
-            } else {
-                //bring the row on-screen so it feels like part of the keyboard the whole time
-                self.numberRow.transform = .identity
+                translation = -self.numberRow.frame.height
             }
             
             UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseInOut], animations: {
-                self.numberRow.transform = CGAffineTransform(translationX: 0, y: transform)
+                self.numberRowBottom.constant = translation
+                self.view.layoutIfNeeded()
             }, completion: nil)
         }
     }
@@ -61,8 +60,6 @@ class InputViewController: UIViewController {
         }
     }
     
-    
-    
     @IBAction func calculatePressed(_ sender: Any) {
         let text = baseFormulaTextField.text ?? ""
         
@@ -73,47 +70,6 @@ class InputViewController: UIViewController {
             print(calculation.percentComposition)
         }
         
-        
     }
-    
-    
-    
-}
-
-
-//MARK: - String + AttributedString helper
-
-extension String {
-    
-    func asChemicalFormula(ofSize fontSize: CGFloat) -> NSAttributedString {
-        
-        let normalAttributes: [String : Any] = [
-            NSFontAttributeName : UIFont.systemFont(ofSize: fontSize)
-        ]
-        
-        let subscriptAttributes: [String : Any] = [
-            NSFontAttributeName : UIFont.systemFont(ofSize: fontSize * 0.7),
-            NSBaselineOffsetAttributeName : NSNumber(floatLiteral: -1.5)
-        ]
-        
-        //build the attributed string
-        let attributedString = NSMutableAttributedString()
-        var isPastCoefficient = false //all numbers are in subscript except for the coefficient
-        
-        for character in self.characterArray {
-            if character.isLetter {
-                isPastCoefficient = true //the coefficient ends at the first letter
-            }
-            
-            let attributesForCharacter = (!isPastCoefficient || character.isLetter) ? normalAttributes : subscriptAttributes
-            
-            let attributedCharacter = NSAttributedString(string: character, attributes: attributesForCharacter)
-            
-            attributedString.append(attributedCharacter)
-        }
-        
-        return NSAttributedString(attributedString: attributedString) //return an immutable copy
-    }
-    
     
 }
