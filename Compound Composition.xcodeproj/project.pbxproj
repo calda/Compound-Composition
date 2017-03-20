@@ -21,6 +21,7 @@
 		2EEF7C231E7E4444008CEF11 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7C101E7E240C008CEF11 /* Element.swift */; };
 		2EEF7C251E7E6012008CEF11 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7C241E7E6012008CEF11 /* Calculation.swift */; };
 		2EEF7C271E7F1CA2008CEF11 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7C261E7F1CA2008CEF11 /* NumberButton.swift */; };
+		2EEF7C291E803841008CEF11 /* FormulaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7C281E803841008CEF11 /* FormulaTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		2EEF7C1C1E7E42C2008CEF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EEF7C241E7E6012008CEF11 /* Calculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
 		2EEF7C261E7F1CA2008CEF11 /* NumberButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
+		2EEF7C281E803841008CEF11 /* FormulaTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulaTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				2EEF7C081E7E1FDC008CEF11 /* InputViewController.swift */,
 				2EEF7C0E1E7E2002008CEF11 /* NavigationController+LightStatusBar.swift */,
 				2EEF7C261E7F1CA2008CEF11 /* NumberButton.swift */,
+				2EEF7C281E803841008CEF11 /* FormulaTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				2EEF7C111E7E240C008CEF11 /* Element.swift in Sources */,
 				2EEF7C271E7F1CA2008CEF11 /* NumberButton.swift in Sources */,
 				2EEF7C0F1E7E2002008CEF11 /* NavigationController+LightStatusBar.swift in Sources */,
+				2EEF7C291E803841008CEF11 /* FormulaTextField.swift in Sources */,
 				2EEF7C131E7E2655008CEF11 /* Formula.swift in Sources */,
 				2EEF7C0D1E7E1FE5008CEF11 /* Compound_Composition.xcdatamodeld in Sources */,
 				2EEF7C091E7E1FDC008CEF11 /* InputViewController.swift in Sources */,

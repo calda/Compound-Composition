@@ -184,7 +184,11 @@ extension String {
     }
     
     var isUppercaseLetter: Bool {
-        return !self.isLowercaseLetter
+        return self.isSingleCharacter && "ABCDEFGHIJKLMNOPQRSTUVWXYZ".contains(self)
+    }
+    
+    var isLetter: Bool {
+        return self.isLowercaseLetter || self.isUppercaseLetter
     }
 
     

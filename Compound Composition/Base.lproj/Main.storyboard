@@ -49,6 +49,9 @@
                                                         <integer key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZgW-YE-o7N"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A00-V0-rTF" userLabel="2" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
                                                 <rect key="frame" x="37" y="0.0" width="31" height="42"/>
@@ -58,6 +61,9 @@
                                                         <integer key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7R3-0A-mPS"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IpK-nM-M06" userLabel="3" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
                                                 <rect key="frame" x="74" y="0.0" width="31.5" height="42"/>
@@ -67,6 +73,9 @@
                                                         <integer key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="05t-oG-5WV"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCN-qw-uPZ" userLabel="4" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
                                                 <rect key="frame" x="111.5" y="0.0" width="31" height="42"/>
@@ -76,6 +85,9 @@
                                                         <integer key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7er-lG-1KX"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crl-aE-0uJ" userLabel="5" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
                                                 <rect key="frame" x="148.5" y="0.0" width="31" height="42"/>
@@ -85,6 +97,9 @@
                                                         <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JwV-n5-uy2"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ytd-1x-jjO" userLabel="6" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
                                                 <rect key="frame" x="185.5" y="0.0" width="31" height="42"/>
@@ -94,6 +109,9 @@
                                                         <integer key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WjK-B4-RLE"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFd-pW-b2s" userLabel="7" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
                                                 <rect key="frame" x="222.5" y="0.0" width="31" height="42"/>
@@ -103,6 +121,9 @@
                                                         <integer key="value" value="7"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kzt-c1-lML"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9D-7W-pGU" userLabel="8" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
                                                 <rect key="frame" x="259.5" y="0.0" width="31.5" height="42"/>
@@ -112,6 +133,9 @@
                                                         <integer key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1hk-5f-Hgz"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzG-cL-aWv" userLabel="0" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
                                                 <rect key="frame" x="334" y="0.0" width="31" height="42"/>
@@ -121,6 +145,9 @@
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RQq-lR-p8V"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DoD-l7-XdJ" userLabel="9" customClass="NumberButton" customModule="Compound_Composition" customModuleProvider="target">
                                                 <rect key="frame" x="297" y="0.0" width="31" height="42"/>
@@ -130,6 +157,9 @@
                                                         <integer key="value" value="9"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DFG-0x-yz2"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -178,7 +208,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.85378370686666671" green="0.85378370686666671" blue="0.85378370686666671" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.87417465648502546" green="0.88666286586338305" blue="0.91163928462009791" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="aqZ-si-iqA" secondAttribute="trailing" constant="5" id="5uo-6k-6sk"/>
                                     <constraint firstItem="aqZ-si-iqA" firstAttribute="top" secondItem="swm-bn-b1X" secondAttribute="top" constant="7" id="JVg-tU-WgF"/>
@@ -187,14 +217,14 @@
                                     <constraint firstAttribute="bottom" secondItem="aqZ-si-iqA" secondAttribute="bottom" constant="7" id="nza-dM-P2I"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="C5H8Cl2NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TuK-4m-FDb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="C5H8Cl2NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TuK-4m-FDb" customClass="FormulaTextField" customModule="Compound_Composition" customModuleProvider="target">
                                 <rect key="frame" x="16" y="51" width="343" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="PKt-cN-W08"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="webSearch"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -215,6 +245,7 @@
                     <connections>
                         <outlet property="baseFormulaTextField" destination="TuK-4m-FDb" id="NRH-8G-c6H"/>
                         <outlet property="numberRow" destination="swm-bn-b1X" id="BKb-Oc-a6p"/>
+                        <outletCollection property="formulaTextFields" destination="TuK-4m-FDb" collectionClass="NSMutableArray" id="qiW-pL-ZgU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,7 +10,8 @@ import UIKit
 
 class InputViewController: UIViewController {
 
-    @IBOutlet weak var baseFormulaTextField: UITextField!
+    @IBOutlet var formulaTextFields: [FormulaTextField]!
+    @IBOutlet weak var baseFormulaTextField: FormulaTextField!
     @IBOutlet weak var numberRow: UIView!
 
     
@@ -53,6 +54,14 @@ class InputViewController: UIViewController {
     
     //MARK: - User Interaction
     
+    @IBAction func numberButtonPressed(_ sender: NumberButton) {
+        guard let number = sender.displayNumber else { return }
+        if let currentTextField = formulaTextFields.first(where: { $0.isFirstResponder }) {
+            currentTextField.simulateKeyboardPress(character: "\(number)")
+        }
+    }
+    
+    
     
     @IBAction func calculatePressed(_ sender: Any) {
         let text = baseFormulaTextField.text ?? ""
@@ -67,6 +76,44 @@ class InputViewController: UIViewController {
         
     }
     
+    
+    
+}
+
+
+//MARK: - String + AttributedString helper
+
+extension String {
+    
+    func asChemicalFormula(ofSize fontSize: CGFloat) -> NSAttributedString {
+        
+        let normalAttributes: [String : Any] = [
+            NSFontAttributeName : UIFont.systemFont(ofSize: fontSize)
+        ]
+        
+        let subscriptAttributes: [String : Any] = [
+            NSFontAttributeName : UIFont.systemFont(ofSize: fontSize * 0.7),
+            NSBaselineOffsetAttributeName : NSNumber(floatLiteral: -1.5)
+        ]
+        
+        //build the attributed string
+        let attributedString = NSMutableAttributedString()
+        var isPastCoefficient = false //all numbers are in subscript except for the coefficient
+        
+        for character in self.characterArray {
+            if character.isLetter {
+                isPastCoefficient = true //the coefficient ends at the first letter
+            }
+            
+            let attributesForCharacter = (!isPastCoefficient || character.isLetter) ? normalAttributes : subscriptAttributes
+            
+            let attributedCharacter = NSAttributedString(string: character, attributes: attributesForCharacter)
+            
+            attributedString.append(attributedCharacter)
+        }
+        
+        return NSAttributedString(attributedString: attributedString) //return an immutable copy
+    }
     
     
 }
