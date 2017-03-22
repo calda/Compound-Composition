@@ -8,12 +8,16 @@
 
 import UIKit
 
-class InputViewController: UIViewController {
+class InputViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var formulaTextFields: [FormulaTextField]!
     @IBOutlet weak var baseFormulaTextField: FormulaTextField!
     @IBOutlet weak var numberRow: UIView!
     @IBOutlet weak var numberRowBottom: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    
+    var additionalComponents = [""]
 
     
     //MARK: - View Setup
@@ -23,6 +27,7 @@ class InputViewController: UIViewController {
         
         self.numberRowBottom.constant = -self.numberRow.frame.height
         self.view.layoutIfNeeded()
+        self.updateTableViewHeight(animated: false)
     }
     
     
@@ -50,7 +55,6 @@ class InputViewController: UIViewController {
     }
     
     
-    
     //MARK: - User Interaction
     
     @IBAction func numberButtonPressed(_ sender: NumberButton) {
@@ -58,6 +62,10 @@ class InputViewController: UIViewController {
         if let currentTextField = formulaTextFields.first(where: { $0.isFirstResponder }) {
             currentTextField.simulateKeyboardPress(character: "\(number)")
         }
+    }
+    
+    @IBAction func addComponentPressed(_ sender: Any) {
+        self.addComponent()
     }
     
     @IBAction func calculatePressed(_ sender: Any) {
@@ -70,6 +78,85 @@ class InputViewController: UIViewController {
             print(calculation.percentComposition)
         }
         
+    }
+
+
+    //MARK: - Additional Components Table View
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.additionalComponents.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let index = indexPath.row
+        let currentText = self.additionalComponents[index]
+        
+        let isOnlyCell = (self.additionalComponents.count == 1)
+        let identifier = isOnlyCell ? "component" : "componentWithDelete"
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentInputCell
+        self.formulaTextFields.append(cell.formulaTextField)
+        
+        //closures for cell
+        func onCellContentChanged(to newContent: String) {
+            self.additionalComponents[index] = newContent
+        }
+        
+        func onCellDeleteButtonPressed() {
+            //handle delete
+        }
+        
+        //decorate and return
+        cell.decorate(with: currentText, onContentChanged: onCellContentChanged, onDeletePressed: onCellDeleteButtonPressed)
+        return cell
+    }
+    
+    func addComponent() {
+        self.additionalComponents.append("")
+        self.tableView.reloadData()
+        self.updateTableViewHeight(animated: true)
+    }
+    
+    func updateTableViewHeight(animated: Bool) {
+        let cellHeight: CGFloat = 55.0
+        let totalHeight = cellHeight * CGFloat(self.additionalComponents.count)
+        self.tableViewHeight.constant = totalHeight
+        
+        if animated {
+            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        } else {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+}
+
+class ComponentInputCell : UITableViewCell {
+    
+    @IBOutlet weak var formulaTextField: FormulaTextField!
+    @IBOutlet weak var deleteButton: UIButton?
+    
+    var onContentChanged: ((String) -> ())?
+    var onDeletePressed: (() -> ())?
+    
+    //setup
+    
+    func decorate(with content: String?, onContentChanged: ((String) -> ())?, onDeletePressed: (() -> ())?) {
+        self.formulaTextField.text = content ?? ""
+        self.onContentChanged = onContentChanged
+        self.onDeletePressed = onDeletePressed
+    }
+    
+    //user interaction
+    
+    @IBAction func textFieldContentChanged(_ sender: FormulaTextField) {
+        self.onContentChanged?(self.formulaTextField?.text ?? "")
+    }
+    
+    @IBAction func deleteButtonPressed() {
+        self.onDeletePressed?()
     }
     
 }
