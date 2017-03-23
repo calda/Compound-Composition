@@ -11,6 +11,14 @@ import UIKit
 @IBDesignable
 class FormulaTextField : UITextField {
     
+    private var underlineView: UIView?
+    
+    @IBInspectable var underlineColor: UIColor? {
+        didSet {
+            updateUnderlineView(animated: false)
+        }
+    }
+    
     
     //MARK: - Setup
     
@@ -35,6 +43,8 @@ class FormulaTextField : UITextField {
         self.keyboardType = .webSearch //so the . is visible
         self.autocorrectionType = .no
         self.spellCheckingType = .no
+        
+        self.updateUnderlineView(animated: false)
     }
     
     func attributedText(for formulaString: String, showingErrors: Bool = false) -> NSAttributedString {
@@ -71,6 +81,8 @@ class FormulaTextField : UITextField {
     func contentChanged() {
         self.preserveCursorPosition(withChanges: { _ in
             self.attributedText = self.attributedText(for: self.text ?? "")
+            
+            self.updateUnderlineView(animated: true)
             return .preserveCursor
         })
     }
@@ -88,8 +100,8 @@ class FormulaTextField : UITextField {
             content.insert(character, at: indexForNewLetter)
             self.attributedText = self.attributedText(for: "\(content)")
             
+            self.updateUnderlineView(animated: true)
             return .incrementCursor
-            
         })
     }
     
@@ -122,6 +134,51 @@ class FormulaTextField : UITextField {
     enum ShouldChangeCursor {
         case incrementCursor
         case preserveCursor
+    }
+    
+    
+    //MARK: - Underline
+    
+    func updateUnderlineView(animated: Bool) {
+        self.borderStyle = .none
+        
+        if underlineView == nil {
+            underlineView = UIView()
+            self.addSubview(underlineView!)
+        }
+        
+        guard let underlineView = underlineView else { return }
+        underlineView.backgroundColor = underlineColor
+        
+        var attributedTextShown: NSAttributedString! = self.attributedText
+        if attributedTextShown == nil || attributedTextShown?.string == "" {
+            attributedTextShown = self.attributedPlaceholder ?? NSAttributedString(string: "")
+        }
+        
+        let contentWidth = attributedTextShown.boundingRect(with: self.frame.size, options: [], context: nil).width
+        let underlineWidth = min(contentWidth, self.frame.width)
+        
+        //calculate offset for text alignment style
+        let underlineFrameX: CGFloat
+        if self.textAlignment == .right {
+            underlineFrameX = self.frame.width - underlineWidth
+        } else if self.textAlignment == .center {
+            underlineFrameX = (self.frame.width - underlineWidth) / 2.0
+        } else {
+            underlineFrameX = 0
+        }
+        
+        let newFrame = CGRect(x: underlineFrameX, y: self.frame.height - 2, width: underlineWidth, height: 2.0)
+        
+        if animated {
+            
+            UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
+                underlineView.frame = newFrame
+            }, completion: nil)
+            
+        } else {
+            underlineView.frame = newFrame
+        }
     }
     
 }
