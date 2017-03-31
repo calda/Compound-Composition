@@ -118,7 +118,7 @@ class InputViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func updateTableViewHeight(animated: Bool) {
-        let cellHeight: CGFloat = 55.0
+        let cellHeight: CGFloat = 75.0
         let totalHeight = cellHeight * CGFloat(self.additionalComponents.count)
         self.tableViewHeight.constant = totalHeight
         

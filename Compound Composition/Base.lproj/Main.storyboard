@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12100" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sIz-YI-iSX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12072"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,11 +20,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swm-bn-b1X">
-                                <rect key="frame" x="0.0" y="547" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="611" width="375" height="56"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqZ-si-iqA">
                                         <rect key="frame" x="5" y="7" width="365" height="42"/>
@@ -206,7 +206,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxz-Mg-Pds">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="591"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base Formula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXf-8V-FrF">
                                         <rect key="frame" x="20" y="20" width="105" height="21"/>
@@ -215,12 +215,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="C5H8Cl2NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TuK-4m-FDb" userLabel="base content" customClass="FormulaTextField" customModule="Compound_Composition" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="51" width="351" height="45"/>
+                                        <rect key="frame" x="25" y="51" width="351" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="PKt-cN-W08"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="webSearch"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
@@ -240,26 +240,26 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZ5-4Y-51i" userLabel="additional content">
-                                        <rect key="frame" x="12" y="147" width="351" height="150"/>
+                                        <rect key="frame" x="25" y="147" width="351" height="200"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyZ-w0-fdE">
-                                                <rect key="frame" x="0.0" y="0.0" width="351" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="component" rowHeight="55" id="XHS-8o-1ar" customClass="ComponentInputCell" customModule="Compound_Composition" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="351" height="55"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="component" rowHeight="75" id="XHS-8o-1ar" customClass="ComponentInputCell" customModule="Compound_Composition" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="351" height="75"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XHS-8o-1ar" id="pbu-u2-8ER">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="55"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="75"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="0.5 HCl" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AjV-TT-vJb" userLabel="base content" customClass="FormulaTextField" customModule="Compound_Composition" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="5" width="351" height="45"/>
+                                                                    <rect key="frame" x="0.0" y="15" width="351" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="Jf8-bD-EUZ"/>
                                                                     </constraints>
                                                                     <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="webSearch"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
@@ -281,20 +281,20 @@
                                                             <outlet property="formulaTextField" destination="AjV-TT-vJb" id="2Uz-dX-CwJ"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="componentWithDelete" rowHeight="55" id="wpU-Vf-fky" customClass="ComponentInputCell" customModule="Compound_Composition" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="83" width="351" height="55"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="componentWithDelete" rowHeight="75" id="wpU-Vf-fky" customClass="ComponentInputCell" customModule="Compound_Composition" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="103" width="351" height="75"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wpU-Vf-fky" id="Jrz-hE-wx3">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="55"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="75"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="0.5 HCl" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UK5-Tx-F3t" userLabel="base content" customClass="FormulaTextField" customModule="Compound_Composition" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="5" width="296" height="45"/>
+                                                                    <rect key="frame" x="0.0" y="15" width="296" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="Lmp-tJ-1AC"/>
                                                                     </constraints>
                                                                     <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="webSearch"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
@@ -306,7 +306,7 @@
                                                                     </connections>
                                                                 </textField>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uj9-we-nyL">
-                                                                    <rect key="frame" x="306" y="9.5" width="35" height="35"/>
+                                                                    <rect key="frame" x="306" y="20" width="35" height="35"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="35" id="Ov1-Ol-NDa"/>
                                                                         <constraint firstAttribute="width" secondItem="uj9-we-nyL" secondAttribute="height" multiplier="1:1" id="dQH-3W-opK"/>
@@ -342,12 +342,12 @@
                                             <constraint firstItem="cyZ-w0-fdE" firstAttribute="top" secondItem="sZ5-4Y-51i" secondAttribute="top" id="0gX-X8-paa"/>
                                             <constraint firstAttribute="bottom" secondItem="cyZ-w0-fdE" secondAttribute="bottom" id="3sY-Zr-HOA"/>
                                             <constraint firstAttribute="trailing" secondItem="cyZ-w0-fdE" secondAttribute="trailing" id="I0c-9v-tze"/>
-                                            <constraint firstAttribute="height" constant="150" id="SWh-sT-LcP"/>
+                                            <constraint firstAttribute="height" constant="200" id="SWh-sT-LcP"/>
                                             <constraint firstItem="cyZ-w0-fdE" firstAttribute="leading" secondItem="sZ5-4Y-51i" secondAttribute="leading" id="rGW-al-q5N"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6a8-gu-d4x">
-                                        <rect key="frame" x="20" y="317" width="75" height="21"/>
+                                        <rect key="frame" x="20" y="367" width="75" height="21"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Hydration">
                                                 <attributes>
@@ -358,7 +358,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5J-8l-S7x" userLabel="hydration content">
-                                        <rect key="frame" x="12" y="348" width="351" height="45"/>
+                                        <rect key="frame" x="25" y="398" width="351" height="45"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="0.5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWt-n1-KFK" customClass="FormulaTextField" customModule="Compound_Composition" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="80.5" height="45"/>
@@ -393,7 +393,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzH-aw-gfB">
-                                        <rect key="frame" x="262" y="413" width="89" height="36"/>
+                                        <rect key="frame" x="275" y="463" width="89" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="Calculate"/>
                                         <connections>
@@ -416,7 +416,7 @@
                                     <constraint firstItem="B5J-8l-S7x" firstAttribute="top" secondItem="6a8-gu-d4x" secondAttribute="bottom" constant="10" id="Eip-wV-W41"/>
                                     <constraint firstItem="MXf-8V-FrF" firstAttribute="top" secondItem="oxz-Mg-Pds" secondAttribute="top" constant="20" id="Jrc-y5-vZo"/>
                                     <constraint firstItem="TuK-4m-FDb" firstAttribute="top" secondItem="MXf-8V-FrF" secondAttribute="bottom" constant="10" id="PQD-8g-AcI"/>
-                                    <constraint firstItem="TuK-4m-FDb" firstAttribute="leading" secondItem="oxz-Mg-Pds" secondAttribute="leading" constant="12" id="Py7-Pl-Kbh"/>
+                                    <constraint firstItem="TuK-4m-FDb" firstAttribute="leading" secondItem="oxz-Mg-Pds" secondAttribute="leading" constant="25" id="Py7-Pl-Kbh"/>
                                     <constraint firstItem="tzH-aw-gfB" firstAttribute="top" secondItem="B5J-8l-S7x" secondAttribute="bottom" constant="20" id="Rgt-8z-Vzc"/>
                                     <constraint firstItem="eJ9-B3-PF1" firstAttribute="leading" secondItem="MXf-8V-FrF" secondAttribute="leading" id="RtH-by-Lkb"/>
                                     <constraint firstItem="B5J-8l-S7x" firstAttribute="leading" secondItem="TuK-4m-FDb" secondAttribute="leading" id="Vl5-Jw-JTd"/>
@@ -457,28 +457,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="860" y="137.18140929535232"/>
-        </scene>
-        <!--Light Status Bar Navigation Controller-->
-        <scene sceneID="jdP-jg-XIr">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sIz-YI-iSX" customClass="LightStatusBarNavigationController" customModule="Compound_Composition" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5V4-U4-r9g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.15443250868055555" green="0.15443250868055555" blue="0.15443250868055555" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uWU-aE-4oP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8a6-F3-bPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="44" y="137"/>
         </scene>
     </scenes>
     <resources>
