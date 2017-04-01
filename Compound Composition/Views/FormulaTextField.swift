@@ -35,12 +35,16 @@ class FormulaTextField : UITextField {
     func setup() {
         self.addTarget(self, action: #selector(self.contentChanged), for: .editingChanged)
         
-        if let placeholder = self.placeholder {
+        if let placeholder = self.placeholder ?? self.attributedPlaceholder?.string {
             self.attributedPlaceholder = self.attributedText(for: placeholder)
         }
         
         self.autocapitalizationType = .allCharacters
-        self.keyboardType = .webSearch //so the . is visible
+        
+        if self.keyboardType == .default {
+            self.keyboardType = .webSearch
+        }
+        
         self.autocorrectionType = .no
         self.spellCheckingType = .no
         
