@@ -21,10 +21,13 @@ class InputViewController: UIViewController {
     @IBOutlet weak var baseFormulaTextField: FormulaTextField!
     @IBOutlet weak var numberRow: UIView!
     @IBOutlet weak var numberRowBottom: NSLayoutConstraint!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
-    var additionalComponents = [""]
+    @IBOutlet weak var additionalComponentsScrollView: UIScrollView!
+    @IBOutlet weak var additionalComponentsView: UIView!
+    @IBOutlet weak var deleteComponentButton: UIButton!
+    
+    @IBOutlet weak var hydrationFormulaLabel: UILabel!
+    
 
     
     //MARK: - View Setup
@@ -34,7 +37,9 @@ class InputViewController: UIViewController {
         
         self.numberRowBottom.constant = -self.numberRow.frame.height
         self.view.layoutIfNeeded()
-        //self.updateTableViewHeight(animated: false)
+        
+        self.hydrationFormulaLabel.attributedText = "H2O".asChemicalFormula(ofSize: 30)
+        self.deleteComponentButton.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,7 +47,8 @@ class InputViewController: UIViewController {
     }
     
     
-    //MARK: - Fake number row
+    //MARK: - Manage the Number Row
+    
     private var previousKeyboardType: UIKeyboardType = .default
     
     func keyboardChanged(notification: Notification) {
@@ -94,14 +100,123 @@ class InputViewController: UIViewController {
         }
     }
     
-    
-    //MARK: - User Interaction
-    
     @IBAction func numberButtonPressed(_ sender: NumberButton) {
         guard let number = sender.displayNumber else { return }
         if let currentTextField = self.currentResponder {
             currentTextField.simulateKeyboardPress(character: "\(number)")
         }
     }
+    
+    
+    //MARK: - Adding and Deleting Additional Components
+    
+    private var additionalComponentTextFields: [FormulaTextField] {
+        return self.formulaTextFields.filter({ $0.superview == self.additionalComponentsView })
+    }
+    
+    private var rightmostAdditionalComponent: (textField: FormulaTextField, constraint: NSLayoutConstraint?)? {
+        let rightmostTextField = self.additionalComponentTextFields.max(by: { label1, label2 in
+            return label1.frame.minX < label2.frame.minX
+        })
+        
+        let constraint = self.additionalComponentsView.constraints.first(where: {
+            if ($0.firstItem as? NSObject != rightmostTextField) && ($0.secondItem as? NSObject != rightmostTextField) {
+                return false
+            }
+            
+            return ($0.firstItem as? NSObject == self.additionalComponentsView && $0.firstAttribute == .trailing)
+                || ($0.secondItem as? NSObject == self.additionalComponentsView && $0.secondAttribute == .trailing)
+        })
+        
+        if let textField = rightmostTextField {
+            return (textField, constraint)
+        } else {
+            return nil
+        }
+    }
+    
+    @IBAction func addAdditionalComponent(_ sender: Any) {
+        guard let (rightmostComponent, rightConstraint) = self.rightmostAdditionalComponent else { return }
+        
+        rightConstraint?.isActive = false
+        
+        //build a new textfield
+        let newTextField = FormulaTextField(frame: .zero)
+        newTextField.translatesAutoresizingMaskIntoConstraints = false
+        newTextField.attributedPlaceholder = rightmostComponent.attributedPlaceholder
+        newTextField.font = rightmostComponent.font
+        newTextField.underlineColor = rightmostComponent.underlineColor
+        
+        self.additionalComponentsView.addSubview(newTextField)
+        self.formulaTextFields.append(newTextField)
+        
+        //build new constraints
+        let constraints = [
+            NSLayoutConstraint(item: newTextField, attribute: .leading, relatedBy: .equal, toItem: rightmostComponent, attribute: .trailing, multiplier: 1, constant: 15),
+        
+            NSLayoutConstraint(item: newTextField, attribute: .trailing, relatedBy: .equal, toItem: self.additionalComponentsView, attribute: .trailing, multiplier: 1, constant: -15),
+        
+            NSLayoutConstraint(item: newTextField, attribute: .centerY, relatedBy: .equal, toItem: rightmostComponent, attribute: .centerY, multiplier: 1, constant: 0)
+        ]
+        
+        let zeroWidthConstraint = NSLayoutConstraint(item: newTextField, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 0)
+        
+        self.additionalComponentsView.addConstraints(constraints)
+        newTextField.addConstraint(zeroWidthConstraint)
+        self.additionalComponentsScrollView.layoutIfNeeded()
+        newTextField.alpha = 0.0
+        newTextField.setup()
+        
+        //animate
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.95, initialSpringVelocity: 0.0, options: [], animations: {
+            
+            newTextField.removeConstraint(zeroWidthConstraint)
+            self.additionalComponentsScrollView.layoutIfNeeded()
+            newTextField.setup()
+            newTextField.alpha = 1.0
+            
+            self.deleteComponentButton.alpha = 1.0
+        }, completion: nil)
+    }
+    
+    @IBAction func deleteAdditionalComponent(_ sender: Any) {
+        guard let (rightmostComponent, rightConstraint) = self.rightmostAdditionalComponent else { return }
+        
+        let zeroWidthConstraint = NSLayoutConstraint(item: rightmostComponent, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 0)
+        rightmostComponent.addConstraint(zeroWidthConstraint)
+        
+        rightConstraint?.constant = 0
+        self.deleteComponentButton.isEnabled = false
+        
+        //animate away the text field
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.95, initialSpringVelocity: 0.0, options: [], animations: {
+            
+            self.additionalComponentsScrollView.layoutIfNeeded()
+            rightmostComponent.alpha = 0.0
+            
+            //keep the user from deleting the first additional component
+            if self.additionalComponentTextFields.count == 2 {
+                self.deleteComponentButton.alpha = 0.0
+                self.deleteComponentButton.isEnabled = true
+            }
+            
+        }, completion: { _ in
+            self.deleteComponentButton.isEnabled = true
+            
+            //remove the text field and update constraints
+            rightmostComponent.removeFromSuperview()
+            if let index = self.formulaTextFields.index(of: rightmostComponent) {
+                self.formulaTextFields.remove(at: index)
+            }
+            
+            guard let (newRightmostComponent, _) = self.rightmostAdditionalComponent else { return }
+            
+            let newRightConstraint = NSLayoutConstraint(item: newRightmostComponent, attribute: .trailing, relatedBy: .equal, toItem: self.additionalComponentsView, attribute: .trailing, multiplier: 1, constant: -15)
+            self.additionalComponentsView.addConstraint(newRightConstraint)
+            
+            self.additionalComponentsScrollView.layoutIfNeeded()
+        })
+    }
+    
     
 }

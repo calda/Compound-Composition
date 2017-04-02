@@ -221,7 +221,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="C5H5Cl2NO" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="497-ZA-NCH" customClass="FormulaTextField" customModule="Compound_Composition" customModuleProvider="target">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="C5H5Cl2NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="497-ZA-NCH" customClass="FormulaTextField" customModule="Compound_Composition" customModuleProvider="target">
                                                                 <rect key="frame" x="25" y="51" width="325" height="36"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -230,7 +230,6 @@
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
                                                                         <color key="value" red="0.058823529411764705" green="0.69019607843137254" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAcceptNumbers" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                         </subviews>
@@ -257,13 +256,13 @@
                                                                 <rect key="frame" x="0.0" y="36.5" width="375" height="70"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaX-Iq-VcF" userLabel="Content View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="284" height="70"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="279" height="70"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifb-Md-4rY" userLabel="extra text fields">
-                                                                                <rect key="frame" x="0.0" y="-0.5" width="150" height="70"/>
+                                                                                <rect key="frame" x="0.0" y="-0.5" width="145" height="70"/>
                                                                                 <subviews>
-                                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.5 HCl" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gYE-mw-ajE" customClass="FormulaTextField" customModule="Compound_Composition" customModuleProvider="target">
-                                                                                        <rect key="frame" x="25" y="12" width="105" height="36"/>
+                                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1.0 HCl" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gYE-mw-ajE" customClass="FormulaTextField" customModule="Compound_Composition" customModuleProvider="target">
+                                                                                        <rect key="frame" x="25" y="12" width="100" height="36"/>
                                                                                         <nil key="textColor"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                                         <textInputTraits key="textInputTraits"/>
@@ -271,7 +270,6 @@
                                                                                             <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
                                                                                                 <color key="value" red="0.050980392156862744" green="0.61176470588235299" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             </userDefinedRuntimeAttribute>
-                                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAcceptNumbers" value="NO"/>
                                                                                         </userDefinedRuntimeAttributes>
                                                                                     </textField>
                                                                                 </subviews>
@@ -285,15 +283,21 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6XQ-4i-oFd" userLabel="buttons">
-                                                                                <rect key="frame" x="150" y="0.0" width="134" height="70"/>
+                                                                                <rect key="frame" x="145" y="0.0" width="134" height="70"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z20-Kf-flY">
                                                                                         <rect key="frame" x="0.0" y="8" width="47" height="48"/>
                                                                                         <state key="normal" image="add component"/>
+                                                                                        <connections>
+                                                                                            <action selector="addAdditionalComponent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XIv-vG-ra3"/>
+                                                                                        </connections>
                                                                                     </button>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSR-hN-8qF">
                                                                                         <rect key="frame" x="62" y="8" width="47" height="48"/>
                                                                                         <state key="normal" image="delete component"/>
+                                                                                        <connections>
+                                                                                            <action selector="deleteAdditionalComponent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3A2-Th-NJG"/>
+                                                                                        </connections>
                                                                                     </button>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -357,7 +361,6 @@
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
                                                                         <color key="value" red="0.1764705882352941" green="0.48627450980392156" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="onlyAcceptNumbers" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTT-c0-AKa">
@@ -463,7 +466,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Chemical Composition" id="ixI-yg-gGR"/>
                     <connections>
+                        <outlet property="additionalComponentsScrollView" destination="gM5-qy-HmA" id="F5z-b7-epp"/>
+                        <outlet property="additionalComponentsView" destination="ifb-Md-4rY" id="kU2-tz-myX"/>
                         <outlet property="baseFormulaTextField" destination="497-ZA-NCH" id="ZiP-pn-ngO"/>
+                        <outlet property="deleteComponentButton" destination="tSR-hN-8qF" id="cd6-wj-nJW"/>
+                        <outlet property="hydrationFormulaLabel" destination="lTT-c0-AKa" id="uBR-yn-4TQ"/>
                         <outlet property="numberRow" destination="swm-bn-b1X" id="BKb-Oc-a6p"/>
                         <outlet property="numberRowBottom" destination="5Mn-fL-5TA" id="Ntu-As-gk9"/>
                         <outletCollection property="formulaTextFields" destination="497-ZA-NCH" collectionClass="NSMutableArray" id="gr9-Px-YTD"/>
