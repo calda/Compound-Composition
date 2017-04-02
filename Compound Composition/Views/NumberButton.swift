@@ -97,7 +97,6 @@ class NumberButton : UIControl {
             
             self.sendActions(for: .touchUpInside)
         }
-
     }
     
     func touchIsInside(_ touch: UITouch) -> Bool {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2EDAC54E1E8F289900481B41 /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDAC54D1E8F289900481B41 /* CornerRadiusButton.swift */; };
+		2EDAC5501E908E0E00481B41 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDAC54F1E908E0E00481B41 /* ResultsViewController.swift */; };
 		2EEF7BF31E7E1DCA008CEF11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7BF21E7E1DCA008CEF11 /* AppDelegate.swift */; };
 		2EEF7BF81E7E1DCA008CEF11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EEF7BF61E7E1DCA008CEF11 /* Main.storyboard */; };
 		2EEF7BFD1E7E1DCA008CEF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EEF7BFC1E7E1DCA008CEF11 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		2EDAC54D1E8F289900481B41 /* CornerRadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
+		2EDAC54F1E908E0E00481B41 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		2EEF7BEF1E7E1DCA008CEF11 /* Compound Composition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Compound Composition.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EEF7BF21E7E1DCA008CEF11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EEF7BF71E7E1DCA008CEF11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				2EEF7C081E7E1FDC008CEF11 /* InputViewController.swift */,
+				2EDAC54F1E908E0E00481B41 /* ResultsViewController.swift */,
 				2EEF7C0E1E7E2002008CEF11 /* NavigationController+LightStatusBar.swift */,
 				2EEF7C261E7F1CA2008CEF11 /* NumberButton.swift */,
 				2EEF7C281E803841008CEF11 /* FormulaTextField.swift */,
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EDAC5501E908E0E00481B41 /* ResultsViewController.swift in Sources */,
 				2EEF7C251E7E6012008CEF11 /* Calculation.swift in Sources */,
 				2EEF7C111E7E240C008CEF11 /* Element.swift in Sources */,
 				2EDAC54E1E8F289900481B41 /* CornerRadiusButton.swift in Sources */,

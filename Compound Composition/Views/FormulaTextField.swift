@@ -49,11 +49,18 @@ class FormulaTextField : UITextField {
         self.updateUnderlineView(animated: false)
     }
     
-    func attributedText(for formulaString: String, showingErrors: Bool = false) -> NSAttributedString {
+    func attributedText(for formulaString: String, showingErrors: Bool = false, baseColor: UIColor) -> NSAttributedString {
         let attributedWithSubscripts = formulaString.asChemicalFormula(ofSize: self.font?.pointSize ?? 23)
         let displayString = attributedWithSubscripts.mutableCopy() as! NSMutableAttributedString
         
         let (_, error) = Formula.from(input: displayString.string)
+        
+        let fullRangeAttributes: [String : Any] = [
+            NSForegroundColorAttributeName : baseColor
+        ]
+        
+        let fullRange = NSMakeRange(0, displayString.length)
+        displayString.addAttributes(fullRangeAttributes, range: fullRange)
         
         //show any errors as red text
         let errorRangeAttributes: [String : Any] = [
@@ -62,7 +69,7 @@ class FormulaTextField : UITextField {
         
         func handleErrorRanges(_ ranges: [NSRange]) {
             ranges.forEach { range in
-                displayString.addAttributes(errorRangeAttributes, range: range)
+                displayString.setAttributes(errorRangeAttributes, range: range)
             }
         }
         
@@ -79,7 +86,8 @@ class FormulaTextField : UITextField {
     
     func correctPlaceholder() {
         if let placeholder = self.placeholder ?? self.attributedPlaceholder?.string {
-            self.attributedPlaceholder = self.attributedText(for: placeholder)
+            let placeholderColor = UIColor(white: 0.0, alpha: 0.25)
+            self.attributedPlaceholder = self.attributedText(for: placeholder, baseColor: placeholderColor)
         }
     }
     
@@ -88,7 +96,7 @@ class FormulaTextField : UITextField {
     
     func contentChanged() {
         self.preserveCursorPosition(withChanges: { _ in
-            self.attributedText = self.attributedText(for: self.text ?? "")
+            self.attributedText = self.attributedText(for: self.text ?? "", baseColor: .black)
             
             self.layoutIfNeeded()
             self.updateUnderlineView(animated: true)
@@ -108,7 +116,7 @@ class FormulaTextField : UITextField {
             }
             
             content.insert(character, at: indexForNewLetter)
-            self.attributedText = self.attributedText(for: "\(content)")
+            self.attributedText = self.attributedText(for: "\(content)", baseColor: .black)
             
             self.layoutIfNeeded()
             self.updateUnderlineView(animated: true)
@@ -230,6 +238,5 @@ extension String {
         
         return NSAttributedString(attributedString: attributedString) //return an immutable copy
     }
-    
     
 }

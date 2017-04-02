@@ -26,6 +26,7 @@ class InputViewController: UIViewController {
     @IBOutlet weak var additionalComponentsView: UIView!
     @IBOutlet weak var deleteComponentButton: UIButton!
     
+    @IBOutlet weak var hydrationTextField: FormulaTextField!
     @IBOutlet weak var hydrationFormulaLabel: UILabel!
     
 
@@ -218,5 +219,57 @@ class InputViewController: UIViewController {
         })
     }
     
+    
+    //MARK: - Calculate
+    
+    @IBAction func calculatePressed(_ sender: Any) {
+        var formulas = [Formula]()
+        
+        for formulaTextField in formulaTextFields {
+            
+            var textFieldText = formulaTextField.text ?? ""
+            if textFieldText.isEmpty { continue }
+            
+            if formulaTextField == hydrationTextField {
+                textFieldText += " H20"
+            }
+            
+            let (formula, error) = Formula.from(input: textFieldText)
+            
+            switch(error) {
+                case .invalidInput(let invalidElements):
+                    parsingFailed(at: invalidElements[0].0)
+                    return
+                case .noElements:
+                    continue
+                case .none:
+                    if let formula = formula {
+                        formulas.append(formula)
+                    }
+            }
+        }
+        
+        parsingSucceeded(with: formulas)
+    }
+    
+    func parsingFailed(at invalidElement: String) {
+        let alert = UIAlertController(title: "Invalid Element", message: "\"\(invalidElement)\" is not an element.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func parsingSucceeded(with formulas: [Formula]) {
+        if formulas.count == 0 {
+            let alert = UIAlertController(title: "No Elements", message: "You must enter at least one element.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        self.currentResponder?.resignFirstResponder()
+        
+        let calculation = Calculation(components: formulas)
+        ResultsViewController.present(in: self.navigationController, with: calculation)
+    }
     
 }
