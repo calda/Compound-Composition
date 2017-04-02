@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E449B651E91A155001AE872 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDAC5521E909D5900481B41 /* Charts.framework */; };
+		2E449B661E91A155001AE872 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDAC5521E909D5900481B41 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2EDAC54E1E8F289900481B41 /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDAC54D1E8F289900481B41 /* CornerRadiusButton.swift */; };
 		2EDAC5501E908E0E00481B41 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDAC54F1E908E0E00481B41 /* ResultsViewController.swift */; };
 		2EEF7BF31E7E1DCA008CEF11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7BF21E7E1DCA008CEF11 /* AppDelegate.swift */; };
@@ -36,9 +38,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2EDAC5731E909DA800481B41 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2E449B661E91A155001AE872 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2EDAC54D1E8F289900481B41 /* CornerRadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
 		2EDAC54F1E908E0E00481B41 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		2EDAC5521E909D5900481B41 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+		2EDAC5531E909D5900481B41 /* ChartsRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ChartsRealm.framework; path = Carthage/Build/iOS/ChartsRealm.framework; sourceTree = "<group>"; };
+		2EDAC5541E909D5900481B41 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		2EDAC5551E909D5900481B41 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		2EEF7BEF1E7E1DCA008CEF11 /* Compound Composition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Compound Composition.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EEF7BF21E7E1DCA008CEF11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EEF7BF71E7E1DCA008CEF11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E449B651E91A155001AE872 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +97,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EDAC5511E909D5900481B41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EDAC5521E909D5900481B41 /* Charts.framework */,
+				2EDAC5531E909D5900481B41 /* ChartsRealm.framework */,
+				2EDAC5541E909D5900481B41 /* Realm.framework */,
+				2EDAC5551E909D5900481B41 /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2EEF7BE61E7E1DCA008CEF11 = {
 			isa = PBXGroup;
 			children = (
 				2EEF7BF11E7E1DCA008CEF11 /* Compound Composition */,
 				2EEF7C191E7E42C2008CEF11 /* Parsing-Tests */,
 				2EEF7BF01E7E1DCA008CEF11 /* Products */,
+				2EDAC5511E909D5900481B41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +184,7 @@
 				2EEF7BEB1E7E1DCA008CEF11 /* Sources */,
 				2EEF7BEC1E7E1DCA008CEF11 /* Frameworks */,
 				2EEF7BED1E7E1DCA008CEF11 /* Resources */,
+				2EDAC5731E909DA800481B41 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -398,6 +432,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FZ89A5SZ7C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Compound Composition/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -412,6 +450,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FZ89A5SZ7C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Compound Composition/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

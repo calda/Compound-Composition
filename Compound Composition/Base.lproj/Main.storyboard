@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -207,13 +209,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79z-RA-sI9" userLabel="Scroll View Content">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="321.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="309.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBb-UX-ZKH" userLabel="Content View">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="321.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="309.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjD-8r-O9N" userLabel="Base Formula">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base Formula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkg-ju-4rN">
                                                                 <rect key="frame" x="25" y="20" width="113" height="21"/>
@@ -222,7 +224,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="C5H5Cl2NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="497-ZA-NCH" customClass="FormulaTextField" customModule="Compound_Composition" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="51" width="325" height="36"/>
+                                                                <rect key="frame" x="25" y="51" width="325" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -244,7 +246,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbw-wn-5ZC">
-                                                        <rect key="frame" x="0.0" y="107" width="375" height="106.5"/>
+                                                        <rect key="frame" x="0.0" y="101" width="375" height="106.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Components" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F27-ET-X04">
                                                                 <rect key="frame" x="25" y="15" width="194" height="21.5"/>
@@ -256,13 +258,13 @@
                                                                 <rect key="frame" x="0.0" y="36.5" width="375" height="70"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaX-Iq-VcF" userLabel="Content View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="279" height="70"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="296" height="70"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifb-Md-4rY" userLabel="extra text fields">
-                                                                                <rect key="frame" x="0.0" y="-0.5" width="145" height="70"/>
+                                                                                <rect key="frame" x="0.0" y="-0.5" width="162" height="70"/>
                                                                                 <subviews>
                                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1.0 HCl" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gYE-mw-ajE" customClass="FormulaTextField" customModule="Compound_Composition" customModuleProvider="target">
-                                                                                        <rect key="frame" x="25" y="12" width="100" height="36"/>
+                                                                                        <rect key="frame" x="25" y="15" width="117" height="30"/>
                                                                                         <nil key="textColor"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                                         <textInputTraits key="textInputTraits"/>
@@ -283,7 +285,7 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6XQ-4i-oFd" userLabel="buttons">
-                                                                                <rect key="frame" x="145" y="0.0" width="134" height="70"/>
+                                                                                <rect key="frame" x="162" y="0.0" width="134" height="70"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z20-Kf-flY">
                                                                                         <rect key="frame" x="0.0" y="8" width="47" height="48"/>
@@ -344,7 +346,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNq-8v-HwD" userLabel="Base Formula">
-                                                        <rect key="frame" x="0.0" y="213.5" width="375" height="108"/>
+                                                        <rect key="frame" x="0.0" y="207.5" width="375" height="102"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hydration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vap-9y-BiH">
                                                                 <rect key="frame" x="25" y="20" width="81.5" height="22"/>
@@ -353,7 +355,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.5" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iv-GO-KDj" customClass="FormulaTextField" customModule="Compound_Composition" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="52" width="48.5" height="36"/>
+                                                                <rect key="frame" x="25" y="52" width="65.5" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -364,7 +366,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTT-c0-AKa">
-                                                                <rect key="frame" x="80.5" y="52" width="48.5" height="35"/>
+                                                                <rect key="frame" x="97.5" y="49" width="48.5" height="35"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="H">
                                                                         <attributes>
@@ -388,7 +390,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVy-jQ-qGQ" customClass="CornerRadiusButton" customModule="Compound_Composition" customModuleProvider="target">
-                                                                <rect key="frame" x="225" y="31.5" width="125" height="45"/>
+                                                                <rect key="frame" x="225" y="28.5" width="125" height="45"/>
                                                                 <color key="backgroundColor" red="0.050980392156862744" green="0.61176470588235299" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="125" id="Hvx-sM-clk"/>
@@ -481,12 +483,12 @@
                         <outletCollection property="formulaTextFields" destination="497-ZA-NCH" collectionClass="NSMutableArray" id="gr9-Px-YTD"/>
                         <outletCollection property="formulaTextFields" destination="gYE-mw-ajE" collectionClass="NSMutableArray" id="huI-cq-HTy"/>
                         <outletCollection property="formulaTextFields" destination="5iv-GO-KDj" collectionClass="NSMutableArray" id="psW-tY-IZp"/>
-                        <segue destination="gIx-97-P3W" kind="show" id="wEA-g5-adW"/>
+                        <segue destination="gIx-97-P3W" kind="show" identifier="toResults" id="wEA-g5-adW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808.8" y="137.18140929535232"/>
+            <point key="canvasLocation" x="1808.5" y="136.5"/>
         </scene>
         <!--Results-->
         <scene sceneID="Tq3-DE-GF9">
@@ -499,19 +501,36 @@
                     <view key="view" contentMode="scaleToFill" id="vWa-rH-HBD">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ie-vm-ydS" userLabel="Chart">
+                                <rect key="frame" x="36" y="30" width="293" height="293"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5ie-vm-ydS" secondAttribute="height" multiplier="1:1" id="73V-9f-g1c"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="5ie-vm-ydS" secondAttribute="trailing" constant="30" id="5ep-h0-8e6"/>
+                            <constraint firstItem="5ie-vm-ydS" firstAttribute="top" secondItem="5cu-IT-2gx" secondAttribute="bottom" constant="30" id="XNE-Ug-0Am"/>
+                            <constraint firstItem="5ie-vm-ydS" firstAttribute="leading" secondItem="vWa-rH-HBD" secondAttribute="leadingMargin" constant="20" id="qR0-ra-MkM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pieChartContainer" destination="5ie-vm-ydS" id="KR8-6F-VyU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuD-xm-7Mb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2556" y="137"/>
+            <point key="canvasLocation" x="2545" y="136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1df-He-UUL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fdy-VZ-xIo" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="8h9-T6-gb9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="8h9-T6-gb9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

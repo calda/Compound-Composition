@@ -194,6 +194,7 @@ class InputViewController: UIViewController {
             
             self.additionalComponentsScrollView.layoutIfNeeded()
             rightmostComponent.alpha = 0.0
+            rightmostComponent.setup()
             
             //keep the user from deleting the first additional component
             if self.additionalComponentTextFields.count == 2 {
