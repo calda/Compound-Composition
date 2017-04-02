@@ -32,13 +32,11 @@ class FormulaTextField : UITextField {
         self.setup()
     }
     
+    
     func setup() {
         self.addTarget(self, action: #selector(self.contentChanged), for: .editingChanged)
         
-        if let placeholder = self.placeholder ?? self.attributedPlaceholder?.string {
-            self.attributedPlaceholder = self.attributedText(for: placeholder)
-        }
-        
+        self.correctPlaceholder()
         self.autocapitalizationType = .allCharacters
         
         if self.keyboardType == .default {
@@ -79,6 +77,12 @@ class FormulaTextField : UITextField {
         return NSAttributedString(attributedString: displayString)
     }
     
+    func correctPlaceholder() {
+        if let placeholder = self.placeholder ?? self.attributedPlaceholder?.string {
+            self.attributedPlaceholder = self.attributedText(for: placeholder)
+        }
+    }
+    
     
     //MARK: - Interaction
     
@@ -86,7 +90,9 @@ class FormulaTextField : UITextField {
         self.preserveCursorPosition(withChanges: { _ in
             self.attributedText = self.attributedText(for: self.text ?? "")
             
+            self.layoutIfNeeded()
             self.updateUnderlineView(animated: true)
+            self.correctPlaceholder() //sometimes the placeholder's font sizes are changed, so it needs to be corrected
             return .preserveCursor
         })
     }
@@ -104,6 +110,7 @@ class FormulaTextField : UITextField {
             content.insert(character, at: indexForNewLetter)
             self.attributedText = self.attributedText(for: "\(content)")
             
+            self.layoutIfNeeded()
             self.updateUnderlineView(animated: true)
             return .incrementCursor
         })

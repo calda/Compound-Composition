@@ -363,7 +363,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTT-c0-AKa">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTT-c0-AKa">
                                                                 <rect key="frame" x="80.5" y="52" width="48.5" height="35"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="H">
@@ -407,6 +407,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstItem="kVy-jQ-qGQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lTT-c0-AKa" secondAttribute="trailing" constant="25" id="FLD-bm-gLf"/>
                                                             <constraint firstAttribute="bottom" secondItem="5iv-GO-KDj" secondAttribute="bottom" constant="20" id="H7T-7D-d1Q"/>
                                                             <constraint firstItem="kVy-jQ-qGQ" firstAttribute="centerY" secondItem="PNq-8v-HwD" secondAttribute="centerY" id="JE9-Bg-xli"/>
                                                             <constraint firstItem="vap-9y-BiH" firstAttribute="top" secondItem="PNq-8v-HwD" secondAttribute="top" constant="20" id="O9N-MM-69a"/>
