@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E449B651E91A155001AE872 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDAC5521E909D5900481B41 /* Charts.framework */; };
 		2E449B661E91A155001AE872 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDAC5521E909D5900481B41 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E449B691E91CB65001AE872 /* ChartColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449B681E91CB65001AE872 /* ChartColor.swift */; };
 		2EDAC54E1E8F289900481B41 /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDAC54D1E8F289900481B41 /* CornerRadiusButton.swift */; };
 		2EDAC5501E908E0E00481B41 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDAC54F1E908E0E00481B41 /* ResultsViewController.swift */; };
 		2EEF7BF31E7E1DCA008CEF11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF7BF21E7E1DCA008CEF11 /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E449B681E91CB65001AE872 /* ChartColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartColor.swift; path = Utils/ChartColor.swift; sourceTree = "<group>"; };
 		2EDAC54D1E8F289900481B41 /* CornerRadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
 		2EDAC54F1E908E0E00481B41 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		2EDAC5521E909D5900481B41 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E449B671E91CB4F001AE872 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2E449B681E91CB65001AE872 /* ChartColor.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		2EDAC5511E909D5900481B41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 				2EEF7C011E7E1DCA008CEF11 /* Info.plist */,
 				2EEF7C071E7E1FDC008CEF11 /* Views */,
 				2EEF7C0A1E7E1FE5008CEF11 /* Model */,
+				2E449B671E91CB4F001AE872 /* Utils */,
 			);
 			path = "Compound Composition";
 			sourceTree = "<group>";
@@ -288,6 +299,7 @@
 				2EEF7C0F1E7E2002008CEF11 /* NavigationController+LightStatusBar.swift in Sources */,
 				2EEF7C291E803841008CEF11 /* FormulaTextField.swift in Sources */,
 				2EEF7C131E7E2655008CEF11 /* Formula.swift in Sources */,
+				2E449B691E91CB65001AE872 /* ChartColor.swift in Sources */,
 				2EEF7C0D1E7E1FE5008CEF11 /* Compound_Composition.xcdatamodeld in Sources */,
 				2EEF7C091E7E1FDC008CEF11 /* InputViewController.swift in Sources */,
 				2EEF7BF31E7E1DCA008CEF11 /* AppDelegate.swift in Sources */,

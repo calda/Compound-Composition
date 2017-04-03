@@ -43,8 +43,14 @@ class InputViewController: UIViewController {
         self.deleteComponentButton.alpha = 0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.formulaTextFields.forEach { $0.setup() }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         self.baseFormulaTextField.becomeFirstResponder()
+        
+        //ResultsViewController.present(in: self.navigationController, with: Calculation(components: [Formula.from(input: "C6H12O6").formula!]))
     }
     
     
