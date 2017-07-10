@@ -1,0 +1,2 @@
+github "danielgindi/Charts" == 3.0.2
+github "danielgindi/Charts" ~> 3.0.2

@@ -19,6 +19,28 @@ class FormulaTextField : UITextField {
         }
     }
     
+    @IBInspectable var formatAsChemicalFormula: Bool = true {
+        didSet {
+            correctPlaceholder()
+            self.updateUnderlineView(animated: false)
+        }
+    }
+    
+    @IBInspectable var configureKeyboardType: Bool = false {
+        didSet {
+            if configureKeyboardType {
+                self.autocapitalizationType = .allCharacters
+                
+                if self.keyboardType == .default {
+                    self.keyboardType = .webSearch
+                }
+                
+                self.autocorrectionType = .no
+                self.spellCheckingType = .no
+            }
+        }
+    }
+    
     
     //MARK: - Setup
     
@@ -35,24 +57,19 @@ class FormulaTextField : UITextField {
     
     func setup() {
         self.addTarget(self, action: #selector(self.contentChanged), for: .editingChanged)
-        
         self.correctPlaceholder()
-        self.autocapitalizationType = .allCharacters
-        
-        if self.keyboardType == .default {
-            self.keyboardType = .webSearch
-        }
-        
-        self.autocorrectionType = .no
-        self.spellCheckingType = .no
-        
         self.updateUnderlineView(animated: false)
     }
     
-    func attributedText(for formulaString: String, showingErrors: Bool = false, baseColor: UIColor) -> NSAttributedString {
+    func attributedText(for formulaString: String, baseColor: UIColor) -> NSAttributedString {
+        guard formatAsChemicalFormula else {
+            return NSAttributedString(
+                string: formulaString,
+                attributes: [NSFontAttributeName: self.font as Any])
+        }
+        
         let attributedWithSubscripts = formulaString.asChemicalFormula(ofSize: self.font?.pointSize ?? 23)
         let displayString = attributedWithSubscripts.mutableCopy() as! NSMutableAttributedString
-        
         let (_, error) = Formula.from(input: displayString.string)
         
         let fullRangeAttributes: [String : Any] = [
@@ -159,6 +176,7 @@ class FormulaTextField : UITextField {
     //MARK: - Underline
     
     func updateUnderlineView(animated: Bool) {
+        layoutIfNeeded()
         self.borderStyle = .none
         
         if underlineView == nil {
@@ -175,6 +193,7 @@ class FormulaTextField : UITextField {
         }
         
         let contentWidth = attributedTextShown.boundingRect(with: self.frame.size, options: [], context: nil).width
+        print("\(attributedTextShown!.string): \(contentWidth) vs \(self.frame.width)")
         let underlineWidth = min(contentWidth, self.frame.width)
         
         //calculate offset for text alignment style
@@ -190,11 +209,9 @@ class FormulaTextField : UITextField {
         let newFrame = CGRect(x: underlineFrameX, y: self.frame.height - 2, width: underlineWidth, height: 2.0)
         
         if animated {
-            
             UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
                 underlineView.frame = newFrame
             }, completion: nil)
-            
         } else {
             underlineView.frame = newFrame
         }
@@ -210,7 +227,8 @@ extension String {
     func asChemicalFormula(ofSize fontSize: CGFloat) -> NSAttributedString {
         
         let normalAttributes: [String : Any] = [
-            NSFontAttributeName : UIFont.systemFont(ofSize: fontSize)
+            NSFontAttributeName : UIFont.systemFont(ofSize: fontSize),
+            NSBaselineOffsetAttributeName : NSNumber(floatLiteral: 0)
         ]
         
         let subscriptAttributes: [String : Any] = [
