@@ -8,6 +8,9 @@
 
 import UIKit
 
+//use something like this for searching by name:
+//http://chemspipy.readthedocs.io/en/latest/
+
 class InputViewController: UIViewController {
 
     @IBOutlet var formulaTextFields: [FormulaTextField]!
@@ -29,7 +32,9 @@ class InputViewController: UIViewController {
     //MARK: - View Setup
     
     override func viewDidLoad() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardChanged(notification:)), name: .UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self,
+            selector: #selector(self.keyboardChanged(notification:)),
+            name: .UIKeyboardWillChangeFrame, object: nil)
         
         self.numberRowBottom.constant = -self.numberRow.frame.height
         self.view.layoutIfNeeded()
@@ -38,7 +43,12 @@ class InputViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.formulaTextFields.forEach { $0.setup() }
+        self.formulaTextFields.forEach { textField in
+            textField.setup()
+            textField.addTarget(self,
+                action: #selector(self.textFieldContentDidChange(_:)),
+                for: .editingChanged)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,7 +91,7 @@ class InputViewController: UIViewController {
             
             self.previousKeyboardType = currentKeyboardType
             
-            
+
             func updatePositions() {
                 self.numberRowBottom.constant = translation
                 self.view.layoutIfNeeded()
@@ -105,6 +115,19 @@ class InputViewController: UIViewController {
         guard let number = sender.displayNumber else { return }
         if let currentTextField = self.currentResponder {
             currentTextField.simulateKeyboardPress(character: "\(number)")
+            self.textFieldContentDidChange(currentTextField)
+        }
+    }
+    
+    
+    //MARK: - User Interaction
+    
+    func textFieldContentDidChange(_ textField: UITextField) {
+        let text = textField.text ?? ""
+        let titleStackView = textField.superview?.subviews.flatMap { $0 as? UIStackView }.first
+        
+        UIView.animate(withDuration: 0.5) {
+            titleStackView?.alpha = (text.isEmpty) ? 1.0 : 0.5
         }
     }
     

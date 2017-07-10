@@ -539,7 +539,7 @@
     </scenes>
     <resources>
         <image name="peptide-alt" width="96" height="96"/>
-        <image name="search" width="128" height="128"/>
+        <image name="search" width="96" height="96"/>
         <image name="water" width="96" height="96"/>
     </resources>
 </document>
